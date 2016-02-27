@@ -7,4 +7,5 @@ class Jif < ActiveRecord::Base
                           uniqueness: true
   validates :static_path, presence:   true,
                           uniqueness: true
+  validates :category, presence:   true
 end
