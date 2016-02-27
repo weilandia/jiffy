@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User signs up for Jiffy" do
-  scenario "they signup and see their profile page" do
+  scenario "they signup and see their profile page without any favorites" do
     visit root_path
     click_on "LOGIN"
 

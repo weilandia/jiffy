@@ -1,0 +1,10 @@
+<div id="categories" class="col-xs-3">
+  Categories
+  <div class="row text-center">
+    <% @categories.each do |cat| %>
+      <div class="col-xs-12">
+        <%= link_to cat.name, category_path(cat) %>
+      </div>
+    <% end %>
+  </div>
+</div>

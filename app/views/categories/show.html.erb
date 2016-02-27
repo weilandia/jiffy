@@ -2,13 +2,13 @@
 <div class="container">
   <div class="row text-center">
     <%= render partial: "shared/categories" %>
-    <div id="favorite_jifs" class="col-xs-9">
-      Favorite Jifs!
+    <div id="category" class="col-xs-9">
+      <%= @category.name.upcase %>
       <div class="row text-center">
-        <% if @user.jifs.empty? %>
-          No favorites yet!
+        <% if @category.jifs.empty? %>
+          No jifs yet!
         <% else %>
-          <% @user.jifs.each do |jif| %>
+          <% @category.jifs.each do |jif| %>
           <div class="col-xs-6 col-sm-4 col-md-3">
 
           </div>
