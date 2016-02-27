@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   background:url('stardust.png');
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
+ }

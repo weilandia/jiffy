@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="form-group text-center">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :username, class:"sr-only"  %>
+      <%= f.text_field :username, placeholder: "username" %>
+      <%= f.label :email, class:"sr-only"  %>
+      <%= f.text_field :email, placeholder: "email" %>
+      <%= f.label :password, class:"sr-only"  %>
+      <%= f.password_field :password, placeholder: "password" %>
+      <%= f.submit "JOIN", class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

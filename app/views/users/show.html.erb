@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row text-center">
+    <div id="categories" class="col-xs-3">
+      Categories
+      <div class="row text-center">
+        <div class="col-xs-12">
+          jif!
+        </div>
+      </div>
+    </div>
+    <div id="favorite_jifs" class="col-xs-9">
+      Favorite Jifs!
+      <div class="row text-center">
+        <% if @user.jifs.empty? %>
+          No favorites yet!
+        <% else %>
+          <% @user.jifs.each do |jif| %>
+          <div class="col-xs-6 col-sm-4 col-md-3">
+
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
