@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="form-group text-center">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :username, class:"sr-only"  %>
+      <%= f.text_field :username, placeholder: "username" %>
+      <%= f.label :password, class:"sr-only"  %>
+      <%= f.password_field :password, placeholder: "password" %>
+      <%= f.submit "LOGIN", class:"btn btn-primary" %>
+    <% end %>
+    <%= link_to "SIGNUP", new_user_path, class:"btn btn-github" %>
+  </div>
+</div>
