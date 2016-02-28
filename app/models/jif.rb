@@ -8,4 +8,6 @@ class Jif < ActiveRecord::Base
   validates :static_path, presence:   true,
                           uniqueness: true
   validates :category, presence:   true
+  validates :width, presence:   true
+  validates :height, presence:   true
 end

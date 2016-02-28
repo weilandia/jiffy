@@ -3,14 +3,14 @@
   <div class="row text-center">
     <%= render partial: "shared/categories" %>
     <div id="favorite_jifs" class="col-xs-9">
-      Favorite Jifs!
-      <div class="row text-center">
+      Favorite Jifs
+      <div id="jifs" class="row text-center jifs">
         <% if @user.jifs.empty? %>
-          No favorites yet!
+          No jifs yet!
         <% else %>
           <% @user.jifs.each do |jif| %>
-          <div class="col-xs-6 col-sm-4 col-md-3">
-
+          <div class="col-xs-6 col-sm-4 col-md-3 jif">
+            <%= link_to image_tag(jif.jif_path, class: "jifs_images", width: "150", height: "150"), category_jif_path(jif.category_id, jif), {class: 'jif_path', id: "#{jif.id}-jif" } %>
           </div>
           <% end %>
         <% end %>

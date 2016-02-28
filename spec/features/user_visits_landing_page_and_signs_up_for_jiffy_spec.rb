@@ -18,8 +18,8 @@ RSpec.feature "User signs up for Jiffy" do
     end
 
     within("div#favorite_jifs") do
-      expect(page).to have_content "Favorite Jifs!"
-      expect(page).to have_content "No favorites yet!"
+      expect(page).to have_content "Favorite Jifs"
+      expect(page).to have_content "No jifs yet!"
     end
 
     within("div#categories") do

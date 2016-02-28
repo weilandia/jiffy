@@ -6,11 +6,11 @@ RSpec.feature "User logs in and vists a category to favorite a jif" do
 
     category = Category.create(name: "test")
 
-    jif = Jif.create(jif_path: "http://media2.giphy.com/media/vt8TzcnDOvTJS/giphy.gif", static_path: "http://media2.giphy.com/media/vt8TzcnDOvTJS/100_s.gif", category_id: category.id)
+    jif = Jif.create(jif_path: "http://media3.giphy.com/media/nrN8fUJ4EZn5m/giphy.gif", static_path: "http://media3.giphy.com/media/nrN8fUJ4EZn5m/giphy.gif", category_id: category.id, width:"250", height:"194")
 
-    jif1 = Jif.create(jif_path: "http://media3.giphy.com/media/zlaeUZnAOpuCY/giphy.gif", static_path: "http://media3.giphy.com/media/zlaeUZnAOpuCY/100_s.gif", category_id: category.id)
+    jif1 = Jif.create(jif_path: "http://media3.giphy.com/media/AOlW6QMcOuWGY/giphy.gif", static_path: "http://media3.giphy.com/media/AOlW6QMcOuWGY/giphy.gif", category_id: category.id, width:"384", height:"288")
 
-    jif2 = Jif.create(jif_path: "http://media3.giphy.com/media/EJ2mqTIOnOU8g/giphy.gif", static_path: "http://media3.giphy.com/media/EJ2mqTIOnOU8g/100_s.gif", category_id: category.id)
+    jif2 = Jif.create(jif_path: "http://media1.giphy.com/media/CcgO6hjOyM6lO/giphy.gif", static_path: "http://media1.giphy.com/media/CcgO6hjOyM6lO/giphy.gif", category_id: category.id, width:"320", height:"320")
 
     visit root_path
 
@@ -37,5 +37,29 @@ RSpec.feature "User logs in and vists a category to favorite a jif" do
     within("div#categories") do
       expect(page).to have_content "Categories"
     end
+
+    within("div#jifs") do
+      expect(page).to have_link "#{jif.id}-jif"
+      expect(page).to have_link "#{jif1.id}-jif"
+      expect(page).to have_link "#{jif2.id}-jif"
+    end
+
+    click_on "#{jif.id}-jif"
+
+    within("div#show_jif") do
+      page.has_css?('img')
+    end
+
+    within("div#jif-info") do
+      expect(page).to have_button "Favorite this jif!"
+      expect(page).to have_link "Category: test"
+      expect(page).to have_content "source: http://media3.giphy.com/media/nrN8fUJ4EZn5m/giphy.gif"
+    end
+
+    click_on "Favorite this jif!"
+
+    expect(current_path).to eq user_path(user)
+
+    expect(page).to have_link "#{jif.id}-jif"
   end
 end
