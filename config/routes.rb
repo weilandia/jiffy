@@ -4,8 +4,12 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create]
   end
 
-  resources :categories, only: [:show] do
+  resources :categories, only: [:show, :new, :create] do
     resources :jifs, only: [:show]
+  end
+
+  namespace :admin do
+    resources :users, only: [:show, :index]
   end
 
   get '/login', to: 'sessions#new'

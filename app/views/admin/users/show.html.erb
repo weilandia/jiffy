@@ -1,0 +1,16 @@
+<%= render partial: "shared/nav" %>
+<div class="container">
+  <div class="row">
+    <%= render partial: "shared/categories" %>
+    <div id="" class="col-xs-9 form-group text-center form-div">
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "container flash_#{type}" %>
+      <% end %><br>
+      <%= form_for(:category, url: categories_path(@category)) do |f| %>
+        <%= f.label :name, class:"sr-only"  %>
+        <%= f.text_field :name, placeholder: "category", class:"form-control text-input" %><br>
+        <%= f.submit "CREATE", class:"btn btn-login" %>
+      <% end %>
+    </div>
+  </div>
+</div>

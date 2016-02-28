@@ -6,7 +6,7 @@
         <%= link_to @category.name, category_path(@category) %>
       </div>
     <% end %>
-    <% @categories.each do |cat| %>
+    <% @categories.order(:name).each do |cat| %>
       <% if @category == cat %>
       <% else %>
         <div class="col-xs-12 cat-link">
