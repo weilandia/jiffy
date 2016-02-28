@@ -1,0 +1,21 @@
+<%= render partial: "shared/nav" %>
+<div class="container-fluid jif-container">
+  <div id="show_jif">
+    <%= link_to image_tag(@jif.jif_path, class: "jifs-images", height: @jif.height, width: @jif.width), category_jif_path(@category, @jif), {class: 'jif_path', id: "#{@jif.id}-jif" } %>
+  </div>
+</div>
+<div id="jif-info" class="container-fluid jif-info-container">
+  <div class="form-group text-center">
+    <%= form_for(:favorite, url: user_favorites_path(current_user)) do |f| %>
+      <%= hidden_field_tag(:user_id, current_user.id) %>
+      <%= hidden_field_tag(:jif_id, @jif.id) %>
+      <%= f.submit "Favorite this jif!", class:"btn btn-github" %>
+    <% end %>
+    <br>
+    <%= link_to "Category: #{@category.name}", category_path(@category), class: "text-center btn btn-primary" %>
+    <div class="source">
+      source: <%= @jif.jif_path %>
+    </div>
+  </div>
+
+</div>

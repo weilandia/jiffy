@@ -1,0 +1,20 @@
+<%= render partial: "shared/nav" %>
+<div class="container">
+  <div class="row text-center">
+    <%= render partial: "shared/categories" %>
+    <div id="category" class="col-xs-9">
+      <%= @category.name.upcase %>
+      <div id="jifs" class="row text-center jifs">
+        <% if @category.jifs.empty? %>
+          No jifs yet!
+        <% else %>
+          <% @category.jifs.each do |jif| %>
+          <div class="col-xs-6 col-sm-4 col-md-3 jif", >
+            <%= link_to image_tag(jif.jif_path, class: "jifs_images", width: "150", height: "150"), category_jif_path(@category, jif), id: "#{jif.id}-jif" %>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
