@@ -15,19 +15,17 @@
 
 .main-nav li {
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 10px;
 }
 
 .main-nav li a:link,
 .main-nav li a:visited {
     padding: 8px 0;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     text-transform: uppercase;
-    /* 90% of the default size from the HTML element */
     font-size: 100%;
     font-weight: bold;
-    /*  transparent means isn't visible until I hover over it  */
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.2s;
 }

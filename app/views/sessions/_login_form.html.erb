@@ -1,12 +1,14 @@
 <div class="container">
-  <div class="form-group text-center">
-    <%= form_for(:session, url: login_path) do |f| %>
+  <div class="form-group text-center form-div">
+    <%= link_to image_tag("logo.png"), root_path, class:"logo-img-form-page" %>
+    <%= form_for(:session, url: login_path, autocomplete: :off) do |f| %>
       <%= f.label :username, class:"sr-only"  %>
-      <%= f.text_field :username, placeholder: "username" %>
+      <%= f.text_field :username, placeholder: "username", class:"form-control text-input" %><br>
       <%= f.label :password, class:"sr-only"  %>
-      <%= f.password_field :password, placeholder: "password" %>
-      <%= f.submit "LOGIN", class:"btn btn-primary" %>
+      <%= f.password_field :password, placeholder: "password", class:"form-control text-input" %><br>
+      <%= f.submit "LOGIN", class:"btn btn-login" %>
+      <%= link_to "SIGNUP", new_user_path, class:"btn btn-signup" %>
     <% end %>
-    <%= link_to "SIGNUP", new_user_path, class:"btn btn-github" %>
+
   </div>
 </div>

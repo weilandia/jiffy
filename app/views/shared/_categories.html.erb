@@ -1,10 +1,18 @@
 <div id="categories" class="col-xs-3 show-header">
   Categories
   <div class="row">
-    <% @categories.each do |cat| %>
-      <div class="col-xs-12">
-        <%= link_to cat.name, category_path(cat) %>
+    <% if @category %>
+      <div class="col-xs-12 cat-link-active">
+        <%= link_to @category.name, category_path(@category) %>
       </div>
+    <% end %>
+    <% @categories.each do |cat| %>
+      <% if @category == cat %>
+      <% else %>
+        <div class="col-xs-12 cat-link">
+          <%= link_to cat.name, category_path(cat) %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -1,13 +1,14 @@
 <div class="container">
-  <div class="form-group text-center">
+  <div class="form-group text-center form-div">
+    <%= link_to image_tag("logo.png"), root_path, class:"logo-img-form-page" %>
     <%= form_for(@user) do |f| %>
       <%= f.label :username, class:"sr-only"  %>
-      <%= f.text_field :username, placeholder: "username" %>
+      <%= f.text_field :username, placeholder: "username", class:"form-control text-input" %><br>
       <%= f.label :email, class:"sr-only"  %>
-      <%= f.text_field :email, placeholder: "email" %>
+      <%= f.text_field :email, placeholder: "email", class:"form-control text-input" %><br>
       <%= f.label :password, class:"sr-only"  %>
-      <%= f.password_field :password, placeholder: "password" %>
-      <%= f.submit "JOIN", class:"btn btn-primary" %>
+      <%= f.password_field :password, placeholder: "password", class:"form-control text-input" %><br>
+      <%= f.submit "JOIN", class:"btn btn-signup" %>
     <% end %>
   </div>
 </div>

@@ -1,14 +1,12 @@
 <%= render partial: "shared/nav" %>
-<div class="container">
   <div class="row">
-    <div id="category" class="col-xs-12 text-center">
-      <div id="jifs" class="row text-center jifs">
-          <% Jif.all.each do |jif| %>
-            <div class="col-xs-6 col-sm-4 col-md-3 jif", >
+    <div id="category" class="col-xs-12">
+      <div id="jifs" class="row jifs">
+          <% Jif.all.order('random()').each do |jif| %>
+            <div class="col-xs-6 col-sm-2 jif", >
               <%= link_to image_tag(jif.jif_path, class: "jifs_images", width: "150", height: "150"), category_jif_path(jif.category_id, jif), id: "#{jif.id}-jif" %>
             </div>
           <% end %>
       </div>
     </div>
   </div>
-</div>
