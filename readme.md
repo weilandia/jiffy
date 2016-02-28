@@ -1,1 +1,2 @@
-##![Jiffy](app/assets/images/logo.png)Jiffy
+![alt-text](app/assets/images/logo.png)
+##Jiffy
