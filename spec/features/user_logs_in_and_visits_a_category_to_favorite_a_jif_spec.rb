@@ -30,10 +30,6 @@ RSpec.feature "User logs in and vists a category to favorite a jif" do
 
     expect(current_path).to eq category_path(category)
 
-    within("div#category") do
-      expect(page).to have_content category.name.upcase
-    end
-
     within("div#categories") do
       expect(page).to have_content "Categories"
     end
@@ -49,7 +45,6 @@ RSpec.feature "User logs in and vists a category to favorite a jif" do
     within("div#show_jif") do
       page.has_css?('img')
     end
-
     within("div#jif-info") do
       expect(page).to have_button "Favorite this jif!"
       expect(page).to have_link "Category: test"
