@@ -5,6 +5,7 @@
     </div>
     <ul class="main-nav">
       <% if current_user %>
+        <li><%= link_to "HOME", user_path(current_user) %></li>
         <li><%= link_to "LOGOUT", logout_path, method: :delete %></li>
       <% elsif %>
         <li><%= link_to "LOGIN", login_path %></li>

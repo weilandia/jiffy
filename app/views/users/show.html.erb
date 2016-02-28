@@ -1,9 +1,11 @@
 <%= render partial: "shared/nav" %>
 <div class="container">
-  <div class="row text-center">
+  <div class="username">
+    <%= @user.username.upcase %>
+  </div>
+  <div class="row">
     <%= render partial: "shared/categories" %>
-    <div id="favorite_jifs" class="col-xs-9">
-      Favorite Jifs
+    <div id="favorite_jifs" class="col-xs-9 show-header">
       <div id="jifs" class="row text-center jifs">
         <% if @user.jifs.empty? %>
           No jifs yet!
