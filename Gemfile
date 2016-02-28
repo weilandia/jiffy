@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby "2.2.4"
 
 gem 'rails', '4.2.5.1'
 gem 'pg', '~> 0.15'
@@ -15,6 +14,7 @@ gem 'unicorn'
 gem 'faraday'
 gem 'giphy'
 gem 'faker'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry-rails'
@@ -30,3 +30,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+ruby "2.2.4"
