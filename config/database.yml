@@ -14,5 +14,5 @@ test:
 production:
   <<: *default
   database: jiffy_production
-  username: jiffy
-  password: <%= ENV['JIFFY_DATABASE_PASSWORD'] %>
+  # username: jiffy
+  # password: <%= ENV['JIFFY_DATABASE_PASSWORD'] %>

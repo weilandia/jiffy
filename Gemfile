@@ -15,9 +15,9 @@ gem 'faraday'
 gem 'giphy'
 gem 'faker'
 gem 'rails_12factor'
+gem 'pry-rails'
 
 group :development, :test do
-  gem 'pry-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
