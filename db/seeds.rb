@@ -60,3 +60,5 @@ categories = ["8-bit",
     Jif.find_or_create_by(category_id: c.id, jif_path: gif.image_url.to_s, static_path: gif.image_url.to_s, width: gif.image_width, height: gif.image_height)
   end
 end
+
+User.create(username: "admin", email:"admin", password:"password",role:1)
